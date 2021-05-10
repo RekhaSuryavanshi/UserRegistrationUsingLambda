@@ -13,6 +13,7 @@ public class UserRegistrationMain {
     private static final String first_Name_Pattern = "(^[A-Z]{1}[a-z]{2,}$)";
     private static final String email_Pattern="^[a-zA-Z0-9+.-]*+[a-zA-Z0-9+]*@[a-zA-Z0-9+.,]*+$";
     private static final String phoneNo_Pattern="^[0-9]{2} [0-9]{10}$";
+    private static final String password_Pattern="^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}";
 
     public boolean checkFirstName(String fname) throws UserRegistrationException {
         boolean result = inputMatch.matches(first_Name_Pattern, fname);
@@ -40,6 +41,17 @@ public class UserRegistrationMain {
         boolean result = inputMatch.matches(phoneNo_Pattern, phno);
         if (result) {
             System.out.println(phno + " is valid PhoneNo");
+            return  true ;
+        }
+        else {
+            throw new UserRegistrationException("please enter valid proper input");
+        }
+    }
+
+    public boolean checkPassword(String password) throws UserRegistrationException {
+        boolean result = inputMatch.matches(password_Pattern, password);
+        if (result) {
+            System.out.println(password + " is valid password");
             return  true ;
         }
         else {
