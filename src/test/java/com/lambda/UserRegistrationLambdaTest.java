@@ -9,7 +9,7 @@ public class UserRegistrationLambdaTest {
     public void givenFirstname_whenNotProper_shouldThrowException() {
         UserRegistrationMain userRegistration = new UserRegistrationMain();
         try {
-            boolean result=userRegistration.checkFirstName("Re");
+            boolean result=userRegistration.checkFirstName("Re1git");
             Assertions.assertTrue(result);
 
         } catch (UserRegistrationException e) {
