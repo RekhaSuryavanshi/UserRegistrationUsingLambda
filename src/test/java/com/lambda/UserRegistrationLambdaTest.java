@@ -42,4 +42,23 @@ public class UserRegistrationLambdaTest {
         boolean result = userRegistration.checkEmailId("abc.xyz@bl.co.in");
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void givenPhoneNo_whenNotProper_shouldThrowException() {
+        UserRegistrationMain userRegistration = new UserRegistrationMain();
+        try {
+            boolean result=userRegistration.checkPhoneNo("9121");
+            Assertions.assertTrue(result);
+
+        } catch (UserRegistrationException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givenPhoneNo_whenProper_shouldReturnValid() throws UserRegistrationException {
+        UserRegistrationMain userRegistration = new UserRegistrationMain();
+        boolean result = userRegistration.checkPhoneNo("91 9741697121");
+        Assertions.assertTrue(result);
+    }
 }

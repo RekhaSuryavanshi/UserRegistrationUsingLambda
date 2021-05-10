@@ -12,6 +12,7 @@ public class UserRegistrationMain {
     lambdaFunction inputMatch = ((pattern, input) -> Pattern.compile(pattern).matcher(input).matches());
     private static final String first_Name_Pattern = "(^[A-Z]{1}[a-z]{2,}$)";
     private static final String email_Pattern="^[a-zA-Z0-9+.-]*+[a-zA-Z0-9+]*@[a-zA-Z0-9+.,]*+$";
+    private static final String phoneNo_Pattern="^[0-9]{2} [0-9]{10}$";
 
     public boolean checkFirstName(String fname) throws UserRegistrationException {
         boolean result = inputMatch.matches(first_Name_Pattern, fname);
@@ -28,6 +29,17 @@ public class UserRegistrationMain {
         boolean result = inputMatch.matches(email_Pattern, email);
         if (result) {
             System.out.println(email + " is valid email");
+            return  true ;
+        }
+        else {
+            throw new UserRegistrationException("please enter valid proper input");
+        }
+    }
+
+    public boolean checkPhoneNo(String phno) throws UserRegistrationException {
+        boolean result = inputMatch.matches(phoneNo_Pattern, phno);
+        if (result) {
+            System.out.println(phno + " is valid PhoneNo");
             return  true ;
         }
         else {
