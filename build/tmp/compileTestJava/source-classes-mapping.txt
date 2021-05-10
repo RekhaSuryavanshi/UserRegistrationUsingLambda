@@ -1,0 +1,2 @@
+com/lambda/UserRegistrationLambdaTest.java
+ com.lambda.UserRegistrationLambdaTest
