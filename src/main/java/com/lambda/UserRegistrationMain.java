@@ -23,6 +23,17 @@ public class UserRegistrationMain {
             throw new UserRegistrationException("please enter valid proper input");
         }
     }
+
+    public boolean checkEmailId(String email) throws UserRegistrationException {
+        boolean result = inputMatch.matches(email_Pattern, email);
+        if (result) {
+            System.out.println(email + " is valid email");
+            return  true ;
+        }
+        else {
+            throw new UserRegistrationException("please enter valid proper input");
+        }
+    }
 }
 
 
