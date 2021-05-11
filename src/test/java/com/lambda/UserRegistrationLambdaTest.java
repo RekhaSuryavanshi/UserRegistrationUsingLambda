@@ -10,7 +10,7 @@ public class UserRegistrationLambdaTest {
         UserRegistrationMain userRegistration = new UserRegistrationMain();
         try {
             boolean result=userRegistration.checkFirstName("Re1");
-            Assertions.assertTrue(result);
+            Assertions.assertFalse(result);
 
         } catch (UserRegistrationException e) {
             e.printStackTrace();
@@ -29,7 +29,7 @@ public class UserRegistrationLambdaTest {
         UserRegistrationMain userRegistration = new UserRegistrationMain();
         try {
             boolean result=userRegistration.checkEmailId("Re");
-            Assertions.assertTrue(result);
+            Assertions.assertFalse(result);
 
         } catch (UserRegistrationException e) {
             e.printStackTrace();
@@ -48,7 +48,7 @@ public class UserRegistrationLambdaTest {
         UserRegistrationMain userRegistration = new UserRegistrationMain();
         try {
             boolean result=userRegistration.checkPhoneNo("9121");
-            Assertions.assertTrue(result);
+            Assertions.assertFalse(result);
 
         } catch (UserRegistrationException e) {
             e.printStackTrace();
@@ -67,7 +67,7 @@ public class UserRegistrationLambdaTest {
         UserRegistrationMain userRegistration = new UserRegistrationMain();
         try {
             boolean result=userRegistration.checkPassword("1234");
-            Assertions.assertTrue(result);
+            Assertions.assertFalse(result);
 
         } catch (UserRegistrationException e) {
             e.printStackTrace();
